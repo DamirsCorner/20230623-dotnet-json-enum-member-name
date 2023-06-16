@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace JsonEnumMemberName;
 
 [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
-[JsonConverter(typeof(JsonStringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumMemberConverter))]
 public enum SampleEnum
 {
     ValueOne = 1,

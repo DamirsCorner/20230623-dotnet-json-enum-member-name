@@ -23,7 +23,7 @@ public class SerializationTests
     }
 
     [Test]
-    public void SystemTextJsonDoesNotReadEnumMemberAttribute()
+    public void SystemTextJsonCustomConverterReadsEnumMemberAttribute()
     {
         var original = new SampleObject
         {
@@ -32,7 +32,7 @@ public class SerializationTests
 
         var json = JsonSerializer.Serialize(original);
 
-        json.Should().Be("""{"Value":"ValueTwo"}""");
+        json.Should().Be("""{"Value":"Value Two"}""");
 
         var deserialized = JsonSerializer.Deserialize<SampleObject>(json);
 
